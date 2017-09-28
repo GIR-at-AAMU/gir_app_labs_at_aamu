@@ -1,4 +1,4 @@
- # Copyright 2017 The GiR @ AAMU Authors. All rights reserved.
+# Copyright 2017 The GiR @ AAMU Authors. All rights reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,20 +14,12 @@
 
 import webapp2
 
-from users import tlarsen
 
-
-class HomePage(webapp2.RequestHandler):
-    """The / home page of the "Hello, world!" app."""
+class UserPage(webapp2.RequestHandler):
+    """The tlarsen user home page of the GiR App Labs at AAMU app."""
 
     def get(self):
-        """HTTP GET handler for the "Hello, world!" app."""
+        """HTTP GET handler for the tlarsen Users page."""
 
         self.response.headers['Content-Type'] = 'text/plain'
-        self.response.write('Hello, World!')
-
-
-app = webapp2.WSGIApplication([
-    ('/', HomePage),
-    ('/u/tlarsen', tlarsen.UserPage),
-], debug=True)
+        self.response.write("Hi, I'm Todd!")
