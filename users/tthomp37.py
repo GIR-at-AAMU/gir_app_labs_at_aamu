@@ -1,4 +1,4 @@
-g# Copyright 2017 The GiR @ AAMU Authors. All rights reserved.
+# Copyright 2017 The GiR @ AAMU Authors. All rights reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,16 +13,13 @@ g# Copyright 2017 The GiR @ AAMU Authors. All rights reserved.
 # limitations under the License.
 
 import webapp2
-from users import tthomp37
+
 
 class UserPage(webapp2.RequestHandler):
-    """The tthomp37 user home page of the GiR Labs at AAMU app."""
+    """The tthomp37 user home page of the GiR App Labs at AAMU app."""
 
     def get(self):
-        """HTTP GET handler for the tthomp37 User page."""
+        """HTTP GET handler for the tthomp37 Users page."""
 
         self.response.headers['Content-Type'] = 'text/plain'
-        self.response.write("Hi, I'm Taivon!"")
-
-app = webapp2.WSGIApplication([
-		])
+        self.response.write("Hi, I'm tthomp37!")
