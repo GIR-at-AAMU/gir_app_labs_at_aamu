@@ -18,6 +18,8 @@ from authors import jbeatty
 from authors import tlarsen
 from authors import tthomp37
 
+from authors import author_pages
+
 
 class HomePage(webapp2.RequestHandler):
     """The / home page of the "Hello, world!" app."""
@@ -29,9 +31,7 @@ class HomePage(webapp2.RequestHandler):
         self.response.write('Hello, World!')
 
 
-app = webapp2.WSGIApplication([
-    ('/', HomePage),
-    ('/a/jbeatty', jbeatty.UserPage),
-    ('/a/tlarsen', tlarsen.UserPage),
-    ('/a/tthomp37', tthomp37.UserPage),
-], debug=True)
+routes = [('/', HomePage),]
+routes.extend(author_pages.routes())
+
+app = webapp2.WSGIApplication(routes, debug=True)
