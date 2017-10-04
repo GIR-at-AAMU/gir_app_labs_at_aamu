@@ -14,9 +14,9 @@
 
 import webapp2
 
-from users import jbeatty
-from users import tlarsen
-from users import tthomp37
+from authors import jbeatty
+from authors import tlarsen
+from authors import tthomp37
 
 
 class HomePage(webapp2.RequestHandler):
@@ -31,7 +31,7 @@ class HomePage(webapp2.RequestHandler):
 
 app = webapp2.WSGIApplication([
     ('/', HomePage),
-    ('/u/jbeatty', jbeatty.UserPage),
-    ('/u/tlarsen', tlarsen.UserPage),
-    ('/u/tthomp37', tthomp37.UserPage),
+    ('/a/jbeatty', jbeatty.UserPage),
+    ('/a/tlarsen', tlarsen.UserPage),
+    ('/a/tthomp37', tthomp37.UserPage),
 ], debug=True)
