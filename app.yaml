@@ -4,4 +4,4 @@ threadsafe: true
 
 handlers:
 - url: /.*
-  script: hello_world.app
+  script: gir_app_labs_at_aamu.app

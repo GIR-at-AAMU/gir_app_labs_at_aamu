@@ -14,8 +14,10 @@
 
 import webapp2
 
+import author_pages
 
-class UserPage(webapp2.RequestHandler):
+
+class AuthorPage(webapp2.RequestHandler):
     """The Spade user home page of th GIR app Labs at AAMU app."""
 
     def get(self):
@@ -23,3 +25,6 @@ class UserPage(webapp2.RequestHandler):
 
         self.response.headers['Content-Type'] = 'text/plain'
         self.response.write("Hello, Mr. Spade!")
+
+
+author_pages.add_page('/a/jbeatty', AuthorPage)

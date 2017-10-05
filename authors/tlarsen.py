@@ -12,16 +12,18 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import webtest
+import webapp2
 
-import hello_world
+import author_pages
+
+class AuthorPage(webapp2.RequestHandler):
+    """The tlarsen user home page of the GiR App Labs at AAMU app."""
+
+    def get(self):
+        """HTTP GET handler for the tlarsen Users page."""
+
+        self.response.headers['Content-Type'] = 'text/plain'
+        self.response.write("Hi, I'm Todd!")
 
 
-def test_get():
-    """Tests the HTTP GET handler of the hello_world HomePage."""
-
-    test_app = webtest.TestApp(hello_world.app)
-    response = test_app.get('/')
-
-    assert response.status_int == 200
-    assert response.body == 'Hello, World!'
+author_pages.add_page('/a/tlarsen', AuthorPage)

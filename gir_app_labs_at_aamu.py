@@ -14,12 +14,24 @@
 
 import webapp2
 
+from authors import jbeatty
+from authors import tlarsen
+from authors import tthomp37
 
-class UserPage(webapp2.RequestHandler):
-    """The tlarsen user home page of the GiR App Labs at AAMU app."""
+from authors import author_pages
+
+
+class HomePage(webapp2.RequestHandler):
+    """The / home page of the "Hello, world!" app."""
 
     def get(self):
-        """HTTP GET handler for the tlarsen Users page."""
+        """HTTP GET handler for the "Hello, world!" app."""
 
         self.response.headers['Content-Type'] = 'text/plain'
-        self.response.write("Hi, I'm Todd!")
+        self.response.write('Hello, World!')
+
+
+routes = [('/', HomePage),]
+routes.extend(author_pages.routes())
+
+app = webapp2.WSGIApplication(routes, debug=True)
