@@ -20,5 +20,6 @@ def routes():
     return _registry.items()
 
 
-def add_page(url_path, handler):
-    _registry[url_path] = handler
+def add_page(user_name, handler):
+	url_path = '/a/' + user_name
+	_registry[url_path] = handler
