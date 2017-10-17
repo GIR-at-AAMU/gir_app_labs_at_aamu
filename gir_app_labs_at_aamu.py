@@ -14,6 +14,7 @@
 
 import webapp2
 
+from authors import amason6
 from authors import jbeatty
 from authors import tlarsen
 from authors import tthomp37

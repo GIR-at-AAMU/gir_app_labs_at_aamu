@@ -12,14 +12,19 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import webapp2
 
-_registry = {}
+import author_pages
+
+class AuthorPage(webapp2.RequestHandler):
+    """The Adria LJ Mason author home page of the GiR App Labs at AAMU app."""
+
+    def get(self):
+        """HTTP GET handler for the Adria LJ Mason Author page."""
+
+        self.response.headers['Content-Type'] = 'text/plain'
+        self.response.write("Hello, guess who?!?! It's Adria LaJoyce Mason!")
 
 
-def routes():
-    return _registry.items()
 
-
-def add_page(user_name, handler):
-	url_path = '/a/' + user_name
-	_registry[url_path] = handler
+author_pages.add_page('amason6', AuthorPage)
