@@ -27,4 +27,4 @@ class AuthorPage(webapp2.RequestHandler):
         self.response.write("Hello, Mr. Spade!")
 
 
-author_pages.add_page('/a/jbeatty', AuthorPage)
+author_pages.add_page('jbeatty', AuthorPage)
