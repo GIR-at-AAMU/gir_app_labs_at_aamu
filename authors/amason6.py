@@ -27,4 +27,4 @@ class AuthorPage(webapp2.RequestHandler):
 
 
 
-author_pages.add_page('/a/amason6', AuthorPage)
+author_pages.add_page('amason6', AuthorPage)
