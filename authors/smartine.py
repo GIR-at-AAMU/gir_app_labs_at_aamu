@@ -14,30 +14,16 @@
 
 import webapp2
 
-from authors import amason6
-from authors import dwilso57
-from authors import jbeatty
-from authors import lsteele3
-from authors import tlarsen
-from authors import smartine
-from authors import tthomp37
-from authors import jnoland
-from authors import nmai
+import author_pages
 
-from authors import author_pages
-
-
-class HomePage(webapp2.RequestHandler):
-    """The / home page of the "Hello, world!" app."""
+class AuthorPage(webapp2.RequestHandler):
+    """The smartine author page of the GiR App Labs at AAMU app."""
 
     def get(self):
-        """HTTP GET handler for the "Hello, world!" app."""
+        """HTTP GET handler for the tlarsen Users page."""
 
         self.response.headers['Content-Type'] = 'text/plain'
-        self.response.write('Hello, World!')
+        self.response.write("Hi, Sarina! Go Marvel!!!")
 
 
-routes = [('/', HomePage),]
-routes.extend(author_pages.routes())
-
-app = webapp2.WSGIApplication(routes, debug=True)
+author_pages.add_page('smartine', AuthorPage)
