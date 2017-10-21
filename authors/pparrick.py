@@ -17,14 +17,13 @@ import webapp2
 import author_pages
 
 class AuthorPage(webapp2.RequestHandler):
-    """The Adria LJ Mason author page of the GiR App Labs at AAMU app."""
+    """The pparrick author page of the GiR App Labs at AAMU app."""
 
     def get(self):
-        """HTTP GET handler for the Adria LJ Mason Author page."""
+        """HTTP GET handler for the pparrick authors page."""
 
         self.response.headers['Content-Type'] = 'text/plain'
-        self.response.write("Hello, guess who?!?! It's Adria LaJoyce Mason! Reinvent")
+        self.response.write("Hi, I'm Peter!")
 
 
-
-author_pages.add_page('amason6', AuthorPage)
+author_pages.add_page('pparrick', AuthorPage)
