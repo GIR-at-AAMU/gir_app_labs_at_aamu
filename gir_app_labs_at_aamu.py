@@ -14,18 +14,24 @@
 
 import webapp2
 
+from authors import aeagle
 from authors import amason6
 from authors import amcgee3
+from authors import aoa0006
+from authors import asessom
 from authors import cbradfo6
 from authors import dwilso57
+from authors import egardner2
 from authors import jander37
 from authors import jbeatty
+from authors import jlindber
 from authors import jmedina
 from authors import jnoland
 from authors import klule
-from authors import nmai
-from authors import mhughe
 from authors import lsteele3
+from authors import mhughe
+from authors import mmaneice
+from authors import nmai
 from authors import pparrick
 from authors import smartine
 from authors import tlarsen
