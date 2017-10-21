@@ -32,7 +32,7 @@ class HomePage(webapp2.RequestHandler):
         """HTTP GET handler for the "Hello, world!" app."""
 
         self.response.headers['Content-Type'] = 'text/plain'
-        self.response.write('It's Justin')
+        self.response.write('Hello, World!')
 
 
 routes = [('/', HomePage),]
