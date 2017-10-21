@@ -15,18 +15,22 @@
 import webapp2
 
 from authors import amason6
+from authors import amcgee3
 from authors import cbradfo6
 from authors import dwilso57
+from authors import jander37
 from authors import jbeatty
-from authors import lsteele3
-from authors import tlarsen
-from authors import smartine
-from authors import tthomp37
 from authors import jnoland
+from authors import lsteele3
+from authors import mhughe
 from authors import nmai
+from authors import smartine
+from authors import tlarsen
+from authors import tthomp37
+
+
 
 from authors import author_pages
-
 
 class HomePage(webapp2.RequestHandler):
     """The / home page of the "Hello, world!" app."""
