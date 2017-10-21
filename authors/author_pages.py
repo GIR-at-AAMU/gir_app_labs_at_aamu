@@ -12,14 +12,35 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import webapp2
+
+class AuthorsListPage(webapp2.RequestHandler):
+    """List of authors of the GiR App Labs at AAMU app."""
+
+    def get(self):
+        """HTTP GET handler for the authors list page."""
+        
+        self.response.headers['Content-Type'] = 'text/html'
+        self.response.write("<html>\n <head>\n")
+        self.response.write("  <title>Author List</title>\n")
+        self.response.write(" </head>\n <body>\n")
+        
+        user_names = _registry.keys()
+        user_names.sort()
+        for user_name in user_names:
+            self.response.write('<a href="/a/{}">{}</a><br>\n'.format(user_name, user_name))
+        
+        self.response.write(" </body>\n</html>\n")
+
 
 _registry = {}
 
 
 def routes():
-    return _registry.items()
+    return [('/a', AuthorsListPage),] + [
+            ('/a/' + user_name, handler)
+            for user_name, handler in _registry.iteritems()]
 
 
 def add_page(user_name, handler):
-	url_path = '/a/' + user_name
-	_registry[url_path] = handler
+	_registry[user_name] = handler
