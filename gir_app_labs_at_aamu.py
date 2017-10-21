@@ -19,10 +19,15 @@ from authors import amcgee3
 from authors import jander37
 from authors import jbeatty
 from authors import jlindber
+from authors import jmedina
+from authors import klule
 from authors import mhughe
 from authors import mmaneice
+from authors import pparrick
 from authors import tlarsen
-
+from authors import tthomp37
+from authors import smartine
+from authors import ualexan1
 from authors import author_pages
 
 class HomePage(webapp2.RequestHandler):
