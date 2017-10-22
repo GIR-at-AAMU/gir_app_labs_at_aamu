@@ -40,6 +40,8 @@ from authors import ualexan1
 
 from authors import author_pages
 
+from models import events
+from models import groups
 from models import places
 from models import users
 
