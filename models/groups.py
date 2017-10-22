@@ -21,13 +21,14 @@ class Group(ndb.Model):
     Properties:
       owner_ids: The User IDs of the group owners
       member_ids: The User IDs of the group members
-      exclusive: If true  private invititation is required
-      invite: If true general invitation is required
-      open: If true no invitation is required
+      exclusivity: How exclusive is the group?
+        'exclusive') private invitation is required
+        'invite-only') general invitation is required
+        'open') no invitation is required
     """
-    
+
+    EXCLUSIVITIES = ('exclusive', 'invite-only', 'open')
+
     owner_ids = ndb.StringProperty(repeated=True)
     member_ids = ndb.StringProperty(repeated=True)
-    exclusive = ndb.BooleanProperty()
-    invite = ndb.BooleanProperty()
-    open = ndb.BooleanProperty()
+    exclusivity = ndb.StringProperty()
