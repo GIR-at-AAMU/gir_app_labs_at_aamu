@@ -40,6 +40,9 @@ from authors import ualexan1
 
 from authors import author_pages
 
+from models import users
+
+
 class HomePage(webapp2.RequestHandler):
     """The / home page of the "Hello, world!" app."""
 
