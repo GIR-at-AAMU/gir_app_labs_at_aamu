@@ -31,3 +31,10 @@ class Group(ndb.Model):
     exclusive = ndb.BooleanProperty()
     invite = ndb.BooleanProperty()
     open = ndb.BooleanProperty()
+    
+    invites= input('Is this group private or public?")
+        if invites = ('Private'):
+            print('Private Group')
+        else:
+            print('Open to all users')
+        
