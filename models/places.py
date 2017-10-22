@@ -31,17 +31,10 @@ class Place(ndb.Model):
 		  	 etc.
 		  }"
 		parking: Is parking available?
-		weather: Outdoor?
-		name: 
+		outdoors: Outdoors or not?
+		name: TBD		
+	"""
 		
-		
-		"""
-		
-		physical_location = ndb.GeoPtProperty()
-		when_open = ndb.JsonProperty()
-		weather = BooleanProperty()
-		
-		
-#		
-#		"""Models an individual Guestbook entry with content and date."""
-#		content = ndb.StringProperty()
+	physical_location = ndb.GeoPtProperty()
+	when_open = ndb.JsonProperty()
+	outdoors = ndb.BooleanProperty()
