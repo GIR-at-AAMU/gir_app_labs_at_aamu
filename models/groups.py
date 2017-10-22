@@ -32,3 +32,4 @@ class Group(ndb.Model):
     owner_ids = ndb.StringProperty(repeated=True)
     member_ids = ndb.StringProperty(repeated=True)
     exclusivity = ndb.StringProperty()
+
