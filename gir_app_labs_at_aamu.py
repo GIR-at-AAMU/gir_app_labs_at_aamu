@@ -32,6 +32,7 @@ from authors import lsteele3
 from authors import mhughe
 from authors import mmaneice
 from authors import nmai
+from authors import nwilli40
 from authors import pparrick
 from authors import smartine
 from authors import tlarsen
