@@ -22,6 +22,7 @@ from authors import asessom
 from authors import cbradfo6
 from authors import dwilso57
 from authors import egardner2
+from authors import ijoda
 from authors import jander37
 from authors import jbeatty
 from authors import jlindber
