@@ -20,7 +20,7 @@ class AuthorPage(webapp2.RequestHandler):
     """The dfoste18 author page of the GiR App Labs at AAMU app."""
 
     def get(self):
-        """HTTP GET handler for the tlarsen author page."""
+        """HTTP GET handler for the dfoste18 author page."""
 
         self.response.headers['Content-Type'] = 'text/plain'
         self.response.write("Hi, I'm Darona Foster!")
