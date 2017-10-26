@@ -2,6 +2,12 @@ runtime: python27
 api_version: 1
 threadsafe: true
 
+libraries:
+- name: webapp2
+  version: latest
+- name: jinja2
+  version: latest
+
 handlers:
 - url: /css/(.*\.css)$
   static_files: static/css/\1
