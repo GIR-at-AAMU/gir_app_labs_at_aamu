@@ -19,10 +19,12 @@ from authors import amason6
 from authors import amcgee3
 from authors import aoa0006
 from authors import asessom
+from authors import awells13
 from authors import cbradfo6
 from authors import dfoste18
 from authors import dwilso57
 from authors import egardner2
+from authors import ijoda
 from authors import jander37
 from authors import jbeatty
 from authors import jlindber
@@ -34,9 +36,11 @@ from authors import lsteele3
 from authors import mhughe
 from authors import mmaneice
 from authors import nmai
+from authors import nwilli40
 from authors import pparrick
 from authors import smartine
 from authors import tlarsen
+from authors import tmcdani
 from authors import tthomp37
 from authors import ualexan1
 
@@ -47,18 +51,9 @@ from models import groups
 from models import places
 from models import users
 
+from pages import home
 
-class HomePage(webapp2.RequestHandler):
-    """The / home page of the "Hello, world!" app."""
-
-    def get(self):
-        """HTTP GET handler for the "Hello, world!" app."""
-
-        self.response.headers['Content-Type'] = 'text/plain'
-        self.response.write('Hello, World!')
-
-
-routes = [('/', HomePage),]
+routes = home.Page.routes()
 routes.extend(author_pages.routes())
 
 app = webapp2.WSGIApplication(routes, debug=True)
