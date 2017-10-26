@@ -35,6 +35,7 @@ from authors import nmai
 from authors import pparrick
 from authors import smartine
 from authors import tlarsen
+from authors import tmcdani
 from authors import tthomp37
 from authors import ualexan1
 
