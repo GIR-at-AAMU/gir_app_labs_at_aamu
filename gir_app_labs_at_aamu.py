@@ -20,6 +20,7 @@ from authors import amcgee3
 from authors import aoa0006
 from authors import asessom
 from authors import cbradfo6
+from authors import dfoste18
 from authors import dwilso57
 from authors import egardner2
 from authors import jander37
