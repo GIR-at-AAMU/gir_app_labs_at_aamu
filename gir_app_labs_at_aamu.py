@@ -45,18 +45,9 @@ from models import groups
 from models import places
 from models import users
 
+from pages import home
 
-class HomePage(webapp2.RequestHandler):
-    """The / home page of the "Hello, world!" app."""
-
-    def get(self):
-        """HTTP GET handler for the "Hello, world!" app."""
-
-        self.response.headers['Content-Type'] = 'text/plain'
-        self.response.write('Hello, World!')
-
-
-routes = [('/', HomePage),]
+routes = home.Page.routes()
 routes.extend(author_pages.routes())
 
 app = webapp2.WSGIApplication(routes, debug=True)
