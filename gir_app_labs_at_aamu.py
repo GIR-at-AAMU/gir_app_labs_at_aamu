@@ -19,6 +19,7 @@ from authors import amason6
 from authors import amcgee3
 from authors import aoa0006
 from authors import asessom
+from authors import awells13
 from authors import cbradfo6
 from authors import dfoste18
 from authors import dwilso57
