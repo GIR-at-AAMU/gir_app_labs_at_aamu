@@ -23,7 +23,7 @@ class AuthorPage(webapp2.RequestHandler):
         """HTTP GET handler for the ijoda author page."""
 
         self.response.headers['Content-Type'] = 'text/plain'
-        self.response.write("Hi, I'm E - Joda")
+        self.response.write("Hi, I'm Emmanuel Joda!!")
 
 
 author_pages.add_page('ijoda', AuthorPage)
