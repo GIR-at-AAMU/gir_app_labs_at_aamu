@@ -17,10 +17,12 @@ import amason6
 import amcgee3
 import aoa0006
 import asessom
+import awells13
 import cbradfo6
 import dfoste18
 import dwilso57
 import egardner2
+import ijoda
 import jander37
 import jbeatty
 import jlindber
@@ -32,9 +34,11 @@ import lsteele3
 import mhughe
 import mmaneice
 import nmai
+import nwilli40
 import pparrick
 import smartine
 import tlarsen
+import tmcdani
 import tthomp37
 import ualexan1
 
