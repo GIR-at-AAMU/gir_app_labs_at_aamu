@@ -14,15 +14,18 @@
 
 import webapp2
 
-from models import events
-from models import groups
-from models import places
-from models import users
-
-from pages import authors
-from pages import base
-from pages import home
+from pages import author_list
 
 
-app = webapp2.WSGIApplication(
-    base.Page.routes(), debug=True)
+class AuthorPage(webapp2.RequestHandler):
+    """The Spade user home page of th GIR app Labs at AAMU app."""
+
+    def get(self):
+        """HTTP GET handler for the Ace of spades user page"""
+
+        self.response.headers['Content-Type'] = 'text/plain'
+        self.response.write("Hello, Mr. Spade!")
+
+
+author_list.Page.add_author('jbeatty', AuthorPage)
+
