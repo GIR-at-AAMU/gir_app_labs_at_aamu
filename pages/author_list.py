@@ -20,33 +20,45 @@ from pages import base
 class Page(base.Page):
     """List of authors of the GiR App Labs at AAMU app."""
 
-    _registry = {}
+    URL_PATH = '/a'
+    TEMPLATE_FILE = 'author_list.html'
+
+    _authors = {}
 
     @classmethod
     def user_path(cls, user_name):
-	return '/a/' + user_name
- 
+	return cls.URL_PATH + '/' + user_name
+
     @classmethod
     def add_author(cls, user_name, handler):
-	cls._registry[user_name] = handler
-        cls.add_page(handler, cls.user_path(user_name))
+	cls._authors[user_name] = {
+          'id': user_name,
+          'name': '',
+          'url': cls.user_path(user_name),
+        }
+        base.Page.add_handler(cls.user_path(user_name), handler)
 
-    def get(self):
-        """HTTP GET handler for the authors list page."""
-        
-        self.response.headers['Content-Type'] = 'text/html'
-        self.response.write("<html>\n <head>\n")
-        self.response.write("  <title>Author List</title>\n")
-        self.response.write(" </head>\n <body>\n")
-        
-        user_names = _registry.keys()
-        user_names.sort()
-        for user_name in user_names:
-            self.response.write('<a href="/a/{}">{}</a><br>\n'.format(user_name, user_name))
-        
-        self.response.write(" </body>\n</html>\n")
+    @classmethod
+    def add_author_page(cls, page):
+	cls._authors[page.USER_NAME] = {
+          'id': page.USER_NAME,
+          'name': page.DISPLAY_NAME,
+          'url': page.url_path(),
+        }
+        page.add_page()
+ 
+    def template_values(self):
+        author_ids = self._authors.keys()
+        author_ids.sort()
+	authors = [self._authors[aid] for aid in author_ids]
+
+        values = super(Page, self).template_values()
+        values.update({
+          'num_authors': len(authors),
+          'authors': authors,
+        })
+        return values
 
 
-
-base.Page.add_page(Page, '/a')
+Page.add_page()
 

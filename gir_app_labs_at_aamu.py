@@ -24,6 +24,7 @@ from pages import authors
 from pages import base
 from pages import home
 
-routes = base.Page.routes()
 
-app = webapp2.WSGIApplication(routes, debug=True)
+app = webapp2.WSGIApplication(
+    base.Page.routes(), debug=True)
+

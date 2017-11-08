@@ -27,5 +27,5 @@ class AuthorPage(webapp2.RequestHandler):
         self.response.write("Hi, I'm Darona Foster!")
 
 
-author_list.Page.add_page('dfoste18', AuthorPage)
+author_list.Page.add_author('dfoste18', AuthorPage)
 
