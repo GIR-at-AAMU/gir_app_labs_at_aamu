@@ -12,17 +12,20 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import webapp2
-
-from models import events
-from models import groups
-from models import places
-from models import users
-
-from pages import authors
 from pages import base
-from pages import home
 
 
-app = webapp2.WSGIApplication(
-    base.Page.routes(), debug=True)
+class Page(base.Page):
+    """The / home page of the GiR App Labs @ AAMU app."""
+
+    URL_PATH = '/'
+    TEMPLATE_FILE = 'index.html'
+
+    def template_values(self):
+        values = super(Page, self).template_values()
+        values['message'] = 'Hello, World!'
+        return values
+
+
+Page.add_page()
+
