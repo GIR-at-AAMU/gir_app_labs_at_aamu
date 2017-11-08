@@ -13,19 +13,40 @@
 # limitations under the License.
 
 from pages import base
+from pages import author_list
 
 
 class Page(base.Page):
-    """The / home page of the GiR App Labs @ AAMU app."""
+    """The base of author pages in the GiR App Labs @ AAMU app."""
 
-    URL_PATH = '/'
-    TEMPLATE_FILE = 'index.html'
+    USER_NAME = 'author'
+    DISPLAY_NAME = ''
+    MESSAGE = 'BASE AUTHOR PAGE'
+
+    TEMPLATE_FILE = 'author.html'
+    TEMPLATES_DIR = 'authors/'
+
+    @classmethod
+    def user_path(cls, user_name):
+	return author_list.Page.user_path(user_name)
+
+    @classmethod
+    def url_path(cls):
+        return cls.user_path(cls.USER_NAME)
+
+    @classmethod
+    def template_file(cls):
+        return cls.TEMPLATES_DIR + cls.USER_NAME + '.html'
 
     def template_values(self):
         values = super(Page, self).template_values()
-        values['message'] = 'Hello, World!'
+        values.update({
+          'message': self.MESSAGE,
+          'author': {
+            'id': self.USER_NAME,
+            'name': self.DISPLAY_NAME,
+          },
+        })
         return values
 
-
-Page.add_page()
 
