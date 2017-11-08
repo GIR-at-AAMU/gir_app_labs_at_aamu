@@ -14,15 +14,16 @@
 
 import webapp2
 
-from models import events
-from models import groups
-from models import places
-from models import users
+import author_pages
 
-from pages import authors
-from pages import base
-from pages import home
+class AuthorPage(webapp2.RequestHandler):
+    """The nwilli author page of the GiR App Labs at AAMU app."""
+
+    def get(self):
+        """HTTP GET handler for the nwilli author page."""
+
+        self.response.headers['Content-Type'] = 'text/plain'
+        self.response.write("Hi, my name is Najiere' Williams!")
 
 
-app = webapp2.WSGIApplication(
-    base.Page.routes(), debug=True)
+author_pages.add_page('nwilli40', AuthorPage)
