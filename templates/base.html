@@ -5,8 +5,10 @@
 {% block head %}
 {% block css %}
     <link type="text/css" rel="stylesheet" href="/3p/bootstrap-4.0.0-beta/css/bootstrap.css">
+    <link type="text/css" rel="stylesheet" href="/3p/bootstrap-4.0.0-beta/css/bootstrap-grid.css">
+    <link type="text/css" rel="stylesheet" href="/3p/bootstrap-4.0.0-beta/css/bootstrap-reboot.css">
     <link type="text/css" rel="stylesheet" href="/css/gir-app-labs-at-aamu.css">
-{% endblock %}
+{% endblock %}  <!-- css -->
 {% block favicon %}
     <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
@@ -16,11 +18,11 @@
     <link rel="shortcut icon" href="/img/favicon.ico">
     <meta name="msapplication-config" content="/img/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
-{% endblock %}
+{% endblock %}  <!-- favicon -->
     <title>
 {% block title %}GiR App Labs @ AAMU{% endblock %}
     </title>
-{% endblock %}
+{% endblock %}  <!-- head -->
   </head>
   <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -39,15 +41,18 @@
         </div>
       </div>
     </div>
-      <hr>
+    <hr>
 {% block content %}{% endblock %}
+{% block footer %}
+    <hr>
     <div>
-      <a href="{{ user_url|safe }}" class="btn">{{ user_linktext }}{% if user_name %}
+      <a href="{{ user_url|safe }}">{{ user_linktext }}{% if user_name %}
         {{ user_name }}{% endif %}</a>
     </div>
     <div>
       <a href="/a">Authors</a>
     </div>
+{% endblock %} <!-- fotter -->
   </body>
 </html>
 {% endautoescape %}
