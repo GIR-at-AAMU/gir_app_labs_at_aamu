@@ -14,7 +14,8 @@
 
 import webapp2
 
-import author_pages
+from pages import author_list
+
 
 class AuthorPage(webapp2.RequestHandler):
     """The jander37 author page of the GiR App Labs at AAMU app."""
@@ -26,4 +27,5 @@ class AuthorPage(webapp2.RequestHandler):
         self.response.write("Hi, I'm Josh!")
 
 
-author_pages.add_page('jander37', AuthorPage)
+author_list.Page.add_author('jander37', AuthorPage)
+

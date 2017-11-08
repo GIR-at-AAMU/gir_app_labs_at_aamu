@@ -17,8 +17,19 @@ import webapp2
 from pages import base
 
 
-class AuthorsListPage(webapp2.RequestHandler):
+class Page(base.Page):
     """List of authors of the GiR App Labs at AAMU app."""
+
+    _registry = {}
+
+    @classmethod
+    def user_path(cls, user_name):
+	return '/a/' + user_name
+ 
+    @classmethod
+    def add_author(cls, user_name, handler):
+	cls._registry[user_name] = handler
+        cls.add_page(handler, cls.user_path(user_name))
 
     def get(self):
         """HTTP GET handler for the authors list page."""
@@ -36,12 +47,6 @@ class AuthorsListPage(webapp2.RequestHandler):
         self.response.write(" </body>\n</html>\n")
 
 
-_registry = {}
 
-base.Page.add_page(AuthorsListPage, '/a')
-
-
-def add_page(user_name, handler):
-	_registry[user_name] = handler
-        base.Page.add_page(handler, '/a/' + user_name)
+base.Page.add_page(Page, '/a')
 

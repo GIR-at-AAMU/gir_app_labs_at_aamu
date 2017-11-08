@@ -14,12 +14,15 @@
 
 import webapp2
 
-import author_pages
+from pages import author_list
+
+
 #handle request from user "request handler" 
 class AuthorPage(webapp2.RequestHandler):
     """The nmai author page of the GiR App Labs at AAMU app."""
-#def-> function; part of the class
-#self -> this in java
+
+    #def-> function; part of the class
+    #self -> this in java
     def get(self):
         """HTTP GET handler for the tlarsen Users page."""
 
@@ -27,4 +30,5 @@ class AuthorPage(webapp2.RequestHandler):
         self.response.write("Hi, I'm Nhan!")
 
 
-author_pages.add_page('nmai', AuthorPage)
+author_list.Page.add_author('nmai', AuthorPage)
+
