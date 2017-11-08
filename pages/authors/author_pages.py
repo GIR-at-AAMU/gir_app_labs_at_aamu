@@ -14,6 +14,9 @@
 
 import webapp2
 
+from pages import base
+
+
 class AuthorsListPage(webapp2.RequestHandler):
     """List of authors of the GiR App Labs at AAMU app."""
 
@@ -35,12 +38,10 @@ class AuthorsListPage(webapp2.RequestHandler):
 
 _registry = {}
 
-
-def routes():
-    return [('/a', AuthorsListPage),] + [
-            ('/a/' + user_name, handler)
-            for user_name, handler in _registry.iteritems()]
+base.Page.add_page(AuthorsListPage, '/a')
 
 
 def add_page(user_name, handler):
 	_registry[user_name] = handler
+        base.Page.add_page(handler, '/a/' + user_name)
+

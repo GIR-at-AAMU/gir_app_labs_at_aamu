@@ -14,42 +14,16 @@
 
 import webapp2
 
-from authors import aeagle
-from authors import amason6
-from authors import amcgee3
-from authors import aoa0006
-from authors import asessom
-from authors import cbradfo6
-from authors import dfoste18
-from authors import dwilso57
-from authors import egardner2
-from authors import jander37
-from authors import jbeatty
-from authors import jlindber
-from authors import jmedina
-from authors import jnoland
-from authors import kfikes3
-from authors import klule
-from authors import lsteele3
-from authors import mhughe
-from authors import mmaneice
-from authors import nmai
-from authors import pparrick
-from authors import smartine
-from authors import tlarsen
-from authors import tthomp37
-from authors import ualexan1
-
-from authors import author_pages
 
 from models import events
 from models import groups
 from models import places
 from models import users
 
+from pages import authors
+from pages import base
 from pages import home
 
-routes = home.Page.routes()
-routes.extend(author_pages.routes())
+routes = base.Page.routes()
 
 app = webapp2.WSGIApplication(routes, debug=True)
