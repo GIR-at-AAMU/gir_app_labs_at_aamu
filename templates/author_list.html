@@ -2,7 +2,7 @@
 {% block title %}{{ num_authors }} Authors{% endblock %}
 {% block content %}
 {% for author in authors %}
-<div class="row">
+<div>
 <a href="{{ author.url }}">{{ author.id }}{% if author.name %}: {{ author.name }}{% endif %}</a>
 </div>
 {% endfor %}
