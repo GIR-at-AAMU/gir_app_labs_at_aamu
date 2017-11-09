@@ -14,15 +14,17 @@
 
 import webapp2
 
-from models import events
-from models import groups
-from models import places
-from models import users
-
-from pages import authors
-from pages import base
-from pages import home
+from pages import author_list
+from pages.authors import author
 
 
-app = webapp2.WSGIApplication(
-    base.Page.routes(), debug=True)
+class Page(author.Page):
+    """The tlarsen author page of the GiR App Labs at AAMU app."""
+
+    USER_NAME = 'tlarsen'
+    DISPLAY_NAME = 'Todd Larsen'
+    MESSAGE = "Hi, I'm Todd Larsen!"
+
+
+author_list.Page.add_author_page(Page)
+
