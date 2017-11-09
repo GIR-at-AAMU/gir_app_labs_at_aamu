@@ -41,9 +41,21 @@ class Page(webapp2.RequestHandler):
         return [(url, handler) for url, handler in cls._registry.items()]
 
     @classmethod
-    def add_page(cls, url):
-        cls._registry[url] = cls
+    def add_page(cls):
+        cls.add_handler(cls.url_path(), cls)
+
+    @classmethod
+    def add_handler(cls, url, handler):
+        cls._registry[url] = handler
     
+    @classmethod
+    def user_path(cls, user_name):
+	return '/u/' + user_name
+
+    @classmethod
+    def url_path(cls):
+        return cls.URL_PATH
+
     def template_values(self):
         user = users.get_current_user()
         if user:
@@ -61,8 +73,17 @@ class Page(webapp2.RequestHandler):
             'user_name': username,
         }
 
+    @classmethod
+    def template_file(cls):
+        return cls.TEMPLATE_FILE
+
     def render(self, template_path, template_values):
         self.response.headers['Content-Type'] = 'text/html'
         template = JINJA_ENVIRONMENT.get_template(template_path)
         self.response.write(template.render(template_values))
+
+    def get(self):
+        """HTTP GET handler for simple App Labs app pagss."""
+
+        self.render(self.template_file(), self.template_values())
 
