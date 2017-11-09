@@ -21,7 +21,7 @@ from pages.authors import author
 class Page(author.Page):
     """The tlarsen author page of the GiR App Labs at AAMU app."""
 
-    USER_NAME = 'TTHOMP37'
+    USER_NAME = 'tthomp37'
     DISPLAY_NAME = 'TAIVON THOMPSON'
     MESSAGE = "Hi, I'm TAIVON THOMPSON!"
 
