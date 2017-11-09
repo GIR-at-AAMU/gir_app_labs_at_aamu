@@ -15,17 +15,16 @@
 import webapp2
 
 from pages import author_list
+from pages.authors import author
 
 
-class AuthorPage(webapp2.RequestHandler):
-    """The ualexan1 author page of the GiR App Labs at AAMU app."""
+class Page(author.Page):
+    """The tlarsen author page of the GiR App Labs at AAMU app."""
 
-    def get(self):
-        """HTTP GET handler for the ualexan1 Author page."""
-
-        self.response.headers['Content-Type'] = 'text/plain'
-        self.response.write("Hi, I'm Uricka!")
+    USER_NAME = 'ualexan1'
+    DISPLAY_NAME = 'Uricka Alexaner'
+    MESSAGE = "Hi, I'm Uricka!"
 
 
-author_list.Page.add_author('ualexan1', AuthorPage)
+author_list.Page.add_author_page(Page)
 
