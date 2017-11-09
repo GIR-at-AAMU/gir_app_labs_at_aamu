@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}
+  {% if author.name %}
+    {{ author.name }}, Author
+  {% else %}
+    Author ID: {{ author.id }}
+  {% endif %}
+{% endblock %}
+{% block content %}{{ message }}{% endblock %}
