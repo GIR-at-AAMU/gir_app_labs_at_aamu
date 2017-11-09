@@ -6,4 +6,12 @@
     Author ID: {{ author.id }}
   {% endif %}
 {% endblock %}
-{% block content %}{{ message }}{% endblock %}
+{% block content %}
+
+<ul>
+ <li><i>Name:</i> <b>{{ author.name }}</b></li>
+ <li><i>Username:</i> <b>{{ author.id }}</b></li>
+ <li>{{ message }}</li>
+</ul>
+
+{% endblock %}
