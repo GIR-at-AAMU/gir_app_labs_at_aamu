@@ -12,34 +12,19 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-import aeagle
-import amason6
-import amcgee3
-import aoa0006
-import asessom
-import awells13
-import cbradfo6
-import dfoste18
-import dwilso57
-import egardner2
-import ijoda
-import jander37
-import jbeatty
-import jlindber
-import jmedina
-import jnoland
-import kfikes3
-import klule
-import lsteele3
-import mcarrjr
-import mhughe
-import mmaneice
-import nmai
-import nwilli40
-import pparrick
-import smartine
-import tlarsen
-import tmcdani
-import tthomp37
-import ualexan1
+import webapp2
+
+from pages import author_list
+from pages.authors import author
+
+
+class Page(author.Page):
+    """The mcarrjr author page of the GiR App Labs at AAMU app."""
+
+    USER_NAME = 'mcarrjr'
+    DISPLAY_NAME = 'Maurice Carr, Jr'
+    MESSAGE = "Hi, I'm Maurice Carr, Jr!"
+
+
+author_list.Page.add_author_page(Page)
 
